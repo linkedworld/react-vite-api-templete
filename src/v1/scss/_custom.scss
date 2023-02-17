@@ -2,22 +2,29 @@
 
 ::-webkit-scrollbar {
     width: 10px;  /* 세로축 스크롤바 길이 */
-    height: 10px;  /* 가로축 스크롤바 길이 */
+    height: 0px;  /* 가로축 스크롤바 길이 */
   }
   ::-webkit-scrollbar-track {
-    background-color: transparent;
+    background-color: rgba(255,255,255,0.3);
+    width: 10px;
+    // border-left: 0px solid transparent;
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
+    background-clip: content-box;
   }
   ::-webkit-scrollbar-track-piece {
     background-color: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    background-color: rgba(28, 26, 26, 0.5);
+    width: 8px;
+    height: 32px;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 2px;
   }
   ::-webkit-scrollbar-button {
     background-color: transparent;
     width: 4px;
-    height: 4px;
+    height: 0px;
   }
   ::-webkit-scrollbar-button:start {
     background-color: transparent; /* Top, Left 방향의 이동버튼 */
