@@ -39,7 +39,7 @@ const AppSidebar = () => {
       <CSidebarNav>
         <SimpleBar>
           <AppSidebarNav items={menu} />
-          {/* <AppSidebarNav items={samples} /> */}
+          <AppSidebarNav items={samples} />
         </SimpleBar>
       </CSidebarNav>
       <CSidebarToggler
