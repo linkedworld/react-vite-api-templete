@@ -31,16 +31,15 @@ const AppSidebar = () => {
       onVisibleChange={(visible) => {
         dispatch(setSidebarShow(visible))
       }}
-      className="scrollbar-w-[10px]"
     >
-      <CSidebarBrand className="d-none d-md-flex" to="/">
-        <CIcon className="sidebar-brand-full" icon={logoNegative} height={35} />
-        <CIcon className="sidebar-brand-narrow" icon={sygnet} height={35} />
+      <CSidebarBrand className="d-none d-md-flex h-[200px]" to="/">
+          <CIcon className="sidebar-brand-full" icon={logoNegative} height={48} />
+          {/* <CIcon className="sidebar-brand-narrow" icon={sygnet} height={48} /> */}
       </CSidebarBrand>
       <CSidebarNav>
         <SimpleBar>
           <AppSidebarNav items={menu} />
-          <AppSidebarNav items={samples} />
+          {/* <AppSidebarNav items={samples} /> */}
         </SimpleBar>
       </CSidebarNav>
       <CSidebarToggler

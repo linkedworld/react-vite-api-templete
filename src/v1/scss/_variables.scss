@@ -1645,9 +1645,9 @@ $escaped-characters: (
 // $sidebar-border-color:                     transparent !default;
 // $sidebar-transition:                       margin-left .15s, margin-right .15s, box-shadow .075s, transform .15s, width .15s, z-index 0s ease .15s !default;
 
-// $sidebar-brand-height:                     4rem !default;
+$sidebar-brand-height:                     10rem !default;
 // $sidebar-brand-color:                      $high-emphasis-inverse !default;
-// $sidebar-brand-bg:                         rgba($black, .2) !default;
+$sidebar-brand-bg:                         rgba($black, .2) !default;
 
 // $sidebar-header-height:                    4rem !default;
 // $sidebar-header-padding-y:                 .75rem !default;
