@@ -24,7 +24,7 @@ const AppContent = () => {
             )
           })}
 
-          {/* {samples.map((route, idx) => {
+          {samples.map((route, idx) => {
             return (
               route.element && (
                 <Route
@@ -36,7 +36,7 @@ const AppContent = () => {
                 />
               )
             )
-          })} */}
+          })}
           <Route path="/" element={<Navigate to="dashboard" replace />} />
         </Routes>
       </Suspense>

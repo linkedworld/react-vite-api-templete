@@ -24,7 +24,7 @@ const _menu = [
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
     badge: {
       color: 'success',
-      text: <CIcon icon={cilSpeedometer} />,
+      text: <CIcon icon={cilSpeedometer} customClassName="text-white"/>,
     },
   },
   {
@@ -34,7 +34,7 @@ const _menu = [
     to: '/members',
     badge: {
       color: 'success',
-      text: <CIcon icon={cilUser} />,
+      text: <CIcon icon={cilUser}/>,
     },
   },
   {
@@ -84,6 +84,10 @@ const _menu = [
   {
     component: CNavTitle,
     name: 'RESOURCE',
+    badge: {
+      color: 'success',
+      text: <CIcon icon={cilNotes}/>,
+    },
   },
   {
     component: CNavGroup,
