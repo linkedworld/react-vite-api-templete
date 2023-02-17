@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {
   CAvatar,
   CBadge,
@@ -9,6 +9,7 @@ import {
   CDropdownMenu,
   CDropdownToggle,
 } from '@coreui/react'
+
 import {
   cilBell,
   cilCreditCard,
@@ -20,15 +21,36 @@ import {
   cilTask,
   cilUser,
 } from '@coreui/icons'
+
 import CIcon from '@coreui/icons-react'
 
-import avatar8 from '@assets/images/avatars/8.jpg'
+import avatar1 from '@assets/images/avatars/1.jpg'
+import avatar2 from '@assets/images/avatars/2.jpg'
+
+import { useSelector, useDispatch } from 'react-redux'
+import { setToken, setIsLogedIn } from '@system/store/slice/loginSlice'
 
 const AppHeaderDropdown = () => {
+  const isLogedIn = useSelector(state => state.login.isLogedIn)
+  const dispatch = useDispatch()
+
+  let avatar = (isLogedIn) ? avatar1 : avatar2
+
+  useEffect(() => {
+    avatar = (isLogedIn) ? avatar1 : avatar2
+  },[isLogedIn])
+
+  const onLgout = () => {
+    dispatch(setIsLogedIn(false))
+    dispatch(setToken(""))
+  }
+
   return (
     <CDropdown variant="nav-item">
       <CDropdownToggle placement="bottom-end" className="py-0" caret={false}>
-        <CAvatar src={avatar8} size="md" />
+
+        <CAvatar src={avatar} size="md" />
+
       </CDropdownToggle>
       <CDropdownMenu className="pt-0" placement="bottom-end">
         <CDropdownHeader className="bg-light fw-semibold py-2">Account</CDropdownHeader>
@@ -84,9 +106,9 @@ const AppHeaderDropdown = () => {
           </CBadge>
         </CDropdownItem>
         <CDropdownDivider />
-        <CDropdownItem href="#">
+        <CDropdownItem href="#" onClick={onLgout}>
           <CIcon icon={cilLockLocked} className="me-2" />
-          Lock Account
+          Log Out
         </CDropdownItem>
       </CDropdownMenu>
     </CDropdown>

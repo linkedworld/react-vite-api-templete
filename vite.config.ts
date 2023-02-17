@@ -7,7 +7,13 @@ export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   server: {
       proxy: {
-        "/api": {
+        "/api/books": {
+          target: "https://cms.greatbooks.co.kr",
+          changeOrigin: true,
+          rewrite: (path) => path.replace('/api/books', '/api'),
+          secure: true,
+        },
+        "/api/v1": {
           target: "http://106.10.33.166:5006",
           changeOrigin: true,
           secure: false,

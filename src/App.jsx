@@ -2,7 +2,11 @@ import React, { Suspense, useEffect } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 
 import api from '@api/item'
+import books from '@/api/books'
 import '@scss/style.scss'
+
+import { useSelector, useDispatch } from 'react-redux'
+import { setToken, setIsLogedIn } from '@system/store/slice/loginSlice'
 
 const loading = (
   <div className="pt-3 text-center">
@@ -14,13 +18,42 @@ const loading = (
 const DefaultLayout = React.lazy(() => import('@layout/DefaultLayout'))
 
 // Pages
-const Login = React.lazy(() => import('@views/pages/login/Login'))
-const Register = React.lazy(() => import('@views/pages/register/Register'))
-const Page404 = React.lazy(() => import('@views/pages/page404/Page404'))
-const Page500 = React.lazy(() => import('@views/pages/page500/Page500'))
+const Login = React.lazy(() => import('@views/templetes/pages/login/Login'))
+const Register = React.lazy(() => import('@views/templetes/pages/register/Register'))
+const Page404 = React.lazy(() => import('@views/templetes/pages/page404/Page404'))
+const Page500 = React.lazy(() => import('@views/templetes/pages/page500/Page500'))
 
-const App = () => {
+const App = (props) => {
+  const isLogedIn = useSelector(state => state.login.isLogedIn)
+  const accessToken = useSelector(state => state.login.accessToken)
+  const dispatch = useDispatch()
+
   useEffect(() => {
+
+      dispatch(setIsLogedIn(false))
+      books.login("beanalog@naver.com", "Olivia@0530").then( response => {
+        if(response?.data?.data !== undefined && response?.data?.data !== null) {
+          const result = response?.data
+          if (result !== undefined && result !== null) {
+
+              const code = result?.code
+
+              if (code !== undefined && code !== null) {
+
+                if (code === 200) {
+                  const token = response?.data?.data[0]?.token
+                  dispatch(setToken(token))
+                  dispatch(setIsLogedIn(true))
+                }
+              }
+          }
+        }
+      })
+
+      books.home().then( response => {
+        console.log(response.data.data)
+      })
+
       api.characters().then( response => {
         console.log(response.data.data)      
       })
