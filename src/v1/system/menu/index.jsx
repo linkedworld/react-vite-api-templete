@@ -24,7 +24,7 @@ const _menu = [
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
     badge: {
       color: 'success',
-      text: <CIcon icon={cilSpeedometer} customClassName="text-white"/>,
+      text: <CIcon icon={cilSpeedometer}/>,
     },
   },
   {

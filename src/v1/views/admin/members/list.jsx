@@ -23,7 +23,7 @@ import { DocsExample } from '@components'
 
 import ReactImg from '@assets/images/react.jpg'
 
-const Cards = () => {
+const Body = () => {
   return (
     <CRow>
       <CCol xs={12}>
@@ -903,4 +903,4 @@ const Cards = () => {
   )
 }
 
-export default Cards
+export default Body
