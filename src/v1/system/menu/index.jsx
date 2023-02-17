@@ -11,6 +11,7 @@ import {
   cilPencil,
   cilPuzzle,
   cilSpeedometer,
+  cilUser,
   cilStar,
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
@@ -28,13 +29,19 @@ const _menu = [
   },
   {
     component: CNavTitle,
-    name: '회원 관리',
+    name: 'MEMBERSHIP',
+
+    to: '/members',
+    badge: {
+      color: 'success',
+      text: <CIcon icon={cilUser} />,
+    },
   },
   {
     component: CNavGroup,
     name: '회원',
     to: '/members',
-    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
@@ -76,7 +83,7 @@ const _menu = [
 
   {
     component: CNavTitle,
-    name: '리소스 관리',
+    name: 'RESOURCE',
   },
   {
     component: CNavGroup,
@@ -130,6 +137,11 @@ const _menu = [
     name: 'Charts',
     to: '/charts',
     icon: <CIcon icon={cilChartPie} customClassName="nav-icon" />,
+  },
+
+  {
+    component: CNavTitle,
+    name: 'SETTINGS',
   },
   {
     component: CNavItem,
