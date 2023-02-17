@@ -25,9 +25,9 @@ import ReactImg from '@assets/images/react.jpg'
 
 const Body = () => {
   return (
-    <CRow>
-      <CCol xs={12}>
-        <CCard className="mb-4">
+    <CRow className="w-full p-0">
+      <CCol xs={12} lassName="w-full p-0">
+        <CCard className="mb-[30px]">
           <CCardHeader>
             <strong>Card</strong> <small>Example</small>
           </CCardHeader>
@@ -62,7 +62,7 @@ const Body = () => {
         </CCard>
       </CCol>
       <CCol xs={12}>
-        <CCard className="mb-4">
+        <CCard className="mb-[30px]">
           <CCardHeader>
             <strong>Card</strong> <small>Body</small>
           </CCardHeader>
