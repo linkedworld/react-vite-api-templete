@@ -1,6 +1,3 @@
-//import '@react-page/editor/lib/index.css'
-//import { baseColors, baseStyle } from "../../../components/Common/style/baseStyle"
-
 class baseColors {
     static colorHeader = '#def2ff'
     static colorEmpasCol = 'rgba(0,0,0,0.07)'
@@ -23,9 +20,13 @@ class style {
             fontWeight: 'bold',
             borderBottom: `thick double ${baseColors.colorEmpasTableRowBorder}`,
         },
+        '& .MuiTypography-root': {
+            fontSize: '1.1rem', 
+        },
         '& .MuiTableBody-root': {
             borderBottom: `2px solid ${baseColors.colorEmpasTableRowBorder}`,
         },
+
         '& .RaDatagrid-headerCell:first-of-type': {
             width: '36px',
         },
@@ -86,8 +87,8 @@ class style {
             borderColor: "transparent",
             fontSize: 14, 
             svg : {
-            width: 16,
-            height: 16,
+                width: 16,
+                height: 16,
             }
         },
         '&:hover': {
@@ -111,7 +112,7 @@ class style {
             lineHeight: 1,
             padding: 0,
             margin: 0,
-            marginRight: 0,
+            // marginRight: 0,
             marginLeft: 0,
             paddingInline: '0px',
             marginTop: '-2px',
