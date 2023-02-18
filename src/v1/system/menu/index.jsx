@@ -40,7 +40,6 @@ const _menu = [
   {
     component: CNavGroup,
     name: '회원',
-    to: '/members',
     icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
     items: [
       {
@@ -51,7 +50,7 @@ const _menu = [
       {
         component: CNavItem,
         name: '회원 목록',
-        to: '/members/list',
+        to: '/posts/list',
       },
     ],
   },

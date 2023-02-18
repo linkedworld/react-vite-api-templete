@@ -1,6 +1,10 @@
 import React, { Suspense, useEffect } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 
+import { Admin, CustomRoutes, Resource, ListGuesser  } from 'react-admin'
+import jsonServerProvider from "ra-data-json-server";
+const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com')
+
 import api from '@api/item'
 import books from '@/api/books'
 import '@scss/style.scss'
@@ -22,6 +26,8 @@ const Login = React.lazy(() => import('@views/templetes/pages/login/Login'))
 const Register = React.lazy(() => import('@views/templetes/pages/register/Register'))
 const Page404 = React.lazy(() => import('@views/templetes/pages/page404/Page404'))
 const Page500 = React.lazy(() => import('@views/templetes/pages/page500/Page500'))
+
+import {list as MemberList, summary as MemberSummary} from '@views/admin/membership/members'
 
 const App = (props) => {
   const isLogedIn = useSelector(state => state.login.isLogedIn)
@@ -60,17 +66,29 @@ const App = (props) => {
   }, [])
 
   return (
-    <HashRouter>
-      <Suspense fallback={loading}>
-        <Routes>
+    // <HashRouter>
+    //   <Suspense fallback={loading}>
+    //     <Routes>
+    //       <Route exact path="/login" name="Login Page" element={<Login />} />
+    //       <Route exact path="/register" name="Register Page" element={<Register />} />
+    //       <Route exact path="/404" name="Page 404" element={<Page404 />} />
+    //       <Route exact path="/500" name="Page 500" element={<Page500 />} />
+    //       <Route path="*" name="Home" element={<DefaultLayout />} />
+    //     </Routes>
+    //   </Suspense>
+    // </HashRouter>
+
+    <Admin dataProvider={dataProvider}>
+        <Resource name="posts" list={MemberList} />
+        
+        <CustomRoutes noLayout>
           <Route exact path="/login" name="Login Page" element={<Login />} />
           <Route exact path="/register" name="Register Page" element={<Register />} />
           <Route exact path="/404" name="Page 404" element={<Page404 />} />
           <Route exact path="/500" name="Page 500" element={<Page500 />} />
-          <Route path="*" name="Home" element={<DefaultLayout />} />
-        </Routes>
-      </Suspense>
-    </HashRouter>
+          <Route path="*" name="Home" element={<DefaultLayout />}/>
+        </CustomRoutes>
+    </Admin>
   )
 }
 

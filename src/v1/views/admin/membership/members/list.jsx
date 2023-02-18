@@ -1,31 +1,24 @@
-import React from 'react'
+import { List, Datagrid, TextField, DateField, BooleanField } from 'react-admin'
+import { Title, ResourceContextProvider, useGetList } from 'react-admin';
 import {
-  CButton,
-  CCard,
-  CCardBody,
-  CCardFooter,
-  CCardGroup,
-  CCardHeader,
-  CCardImage,
-  CCardLink,
-  CCardSubtitle,
-  CCardText,
-  CCardTitle,
-  CListGroup,
-  CListGroupItem,
-  CNav,
-  CNavItem,
-  CNavLink,
-  CCol,
-  CRow,
-} from '@coreui/react'
-import { DocsExample } from '@components'
+  Card,
+  TextField as MuiTextField,
+  Button,
+  Toolbar,
+} from '@mui/material'
 
-
-const Body = () => {
+const Body = (props) => { 
+  console.log(`list: `, props)
   return (
-    <div className='w-full h-screen bg-white flex flex-col'></div>
-  )
-}
+    <List resource="posts" component="div" className="w-full p-0 m-0">
+        <Datagrid>
+            <TextField source="id" />
+            <TextField source="title" />
+            <DateField source="published_at" />
+            <TextField source="category" />
+            <BooleanField source="commentable" />
+        </Datagrid>
+    </List>
+)}
 
 export default Body
