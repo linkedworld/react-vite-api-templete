@@ -113,20 +113,20 @@ class style {
             padding: 0,
             margin: 0,
             // marginRight: 0,
-            marginLeft: 0,
+            // marginLeft: 0,
             paddingInline: '0px',
             marginTop: '-2px',
             marginLeft: '8px',
             marginRight: '8px',
-            transition: 'svg 0.3s',
+            // transition: 'svg 0.3s',
             minWidth: 14,
             verticalAlign: 'top',
             transition: 'svg 0.2s, width 0.3s, height 0.3s',
             svg : {
-            width: 12,
-            height: 12,
-            fill: baseColors.colorNonmalButton,
-            transition: 'width 0.3s, height 0.3s'
+                width: 12,
+                height: 12,
+                fill: baseColors.colorNonmalButton,
+                transition: 'width 0.3s, height 0.3s'
             }
         },
         '& .MuiButton-startIcon': {
