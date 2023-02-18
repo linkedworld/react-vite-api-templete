@@ -50,7 +50,7 @@ const _menu = [
       {
         component: CNavItem,
         name: '회원 목록',
-        to: '/posts/list',
+        to: '/members/list',
       },
     ],
   },
@@ -58,7 +58,7 @@ const _menu = [
 
   {
     component: CNavGroup,
-    name: 'Buttons',
+    name: '계정 관리',
     to: '/buttons',
     icon: <CIcon icon={cilCursor} customClassName="nav-icon" />,
     open: true,

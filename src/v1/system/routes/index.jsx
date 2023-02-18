@@ -13,7 +13,7 @@ const routes = [
   
   { path: '/members', name: '회원', element: MemberSummary, exact: true },
   { path: '/members/summary/*', name: '회원 현황', element: MemberSummary },
-  // { path: '/members/list/*', name: '회원 목록', element: MemberList },
+  { path: '/members/list/*', name: '회원 목록', element: MemberList },
 
   { path: '/posts/*', name: '회원 목록', element: MemberList },
 ]

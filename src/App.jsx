@@ -36,36 +36,36 @@ const App = (props) => {
   const accessToken = useSelector(state => state.login.accessToken)
   const dispatch = useDispatch()
 
-  useEffect(() => {
+  // useEffect(() => {
 
-      dispatch(setIsLogedIn(false))
-      books.login("beanalog@naver.com", "Olivia@0530").then( response => {
-        if(response?.data?.data !== undefined && response?.data?.data !== null) {
-          const result = response?.data
-          if (result !== undefined && result !== null) {
+  //     dispatch(setIsLogedIn(false))
+  //     books.login("beanalog@naver.com", "Olivia@0530").then( response => {
+  //       if(response?.data?.data !== undefined && response?.data?.data !== null) {
+  //         const result = response?.data
+  //         if (result !== undefined && result !== null) {
 
-              const code = result?.code
+  //             const code = result?.code
 
-              if (code !== undefined && code !== null) {
+  //             if (code !== undefined && code !== null) {
 
-                if (code === 200) {
-                  const token = response?.data?.data[0]?.token
-                  dispatch(setToken(token))
-                  dispatch(setIsLogedIn(true))
-                }
-              }
-          }
-        }
-      })
+  //               if (code === 200) {
+  //                 const token = response?.data?.data[0]?.token
+  //                 dispatch(setToken(token))
+  //                 dispatch(setIsLogedIn(true))
+  //               }
+  //             }
+  //         }
+  //       }
+  //     })
 
-      books.home().then( response => {
-        console.log(response.data.data)
-      })
+  //     books.home().then( response => {
+  //       console.log(response.data.data)
+  //     })
 
-      api.characters().then( response => {
-        console.log(response.data.data)      
-      })
-  }, [])
+  //     api.characters().then( response => {
+  //       console.log(response.data.data)      
+  //     })
+  // }, [])
 
   return (
     <Suspense fallback={loading}>

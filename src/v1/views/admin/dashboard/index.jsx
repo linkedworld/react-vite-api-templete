@@ -176,9 +176,9 @@ const Dashboard = () => {
   ]
 
   return (
-    <>
+    <div className='w-full p-0 m-0 flex flex-col'>
       <WidgetsDropdown />
-      <CCard className="mb-4">
+      <CCard className="w-full p-0 m-0 mb-4">
         <CCardBody>
           <CRow>
             <CCol sm={5}>
@@ -451,7 +451,7 @@ const Dashboard = () => {
           </CCard>
         </CCol>
       </CRow>
-    </>
+    </div>
   )
 }
 
