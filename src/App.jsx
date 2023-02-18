@@ -5,6 +5,8 @@ import { Admin, CustomRoutes, Resource, ListGuesser  } from 'react-admin'
 import jsonServerProvider from "ra-data-json-server";
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com')
 
+import theme from './v1/views/admin/theme'
+
 import api from '@api/item'
 import books from '@/api/books'
 import '@scss/style.scss'
@@ -66,29 +68,19 @@ const App = (props) => {
   }, [])
 
   return (
-    // <HashRouter>
-    //   <Suspense fallback={loading}>
-    //     <Routes>
-    //       <Route exact path="/login" name="Login Page" element={<Login />} />
-    //       <Route exact path="/register" name="Register Page" element={<Register />} />
-    //       <Route exact path="/404" name="Page 404" element={<Page404 />} />
-    //       <Route exact path="/500" name="Page 500" element={<Page500 />} />
-    //       <Route path="*" name="Home" element={<DefaultLayout />} />
-    //     </Routes>
-    //   </Suspense>
-    // </HashRouter>
-
-    <Admin dataProvider={dataProvider}>
-        <Resource name="posts" list={MemberList} />
-        
-        <CustomRoutes noLayout>
-          <Route exact path="/login" name="Login Page" element={<Login />} />
-          <Route exact path="/register" name="Register Page" element={<Register />} />
-          <Route exact path="/404" name="Page 404" element={<Page404 />} />
-          <Route exact path="/500" name="Page 500" element={<Page500 />} />
-          <Route path="*" name="Home" element={<DefaultLayout />}/>
-        </CustomRoutes>
-    </Admin>
+    <Suspense fallback={loading}>
+      <Admin dataProvider={dataProvider} theme={theme}>
+          <Resource name="posts" list={MemberList} />
+          
+          <CustomRoutes noLayout>
+            <Route exact path="/login" name="Login Page" element={<Login />} />
+            <Route exact path="/register" name="Register Page" element={<Register />} />
+            <Route exact path="/404" name="Page 404" element={<Page404 />} />
+            <Route exact path="/500" name="Page 500" element={<Page500 />} />
+            <Route path="*" element={<DefaultLayout />} />
+          </CustomRoutes>
+      </Admin>
+    </Suspense>
   )
 }
 

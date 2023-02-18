@@ -1,24 +1,20 @@
 import { List, Datagrid, TextField, DateField, BooleanField } from 'react-admin'
-import { Title, ResourceContextProvider, useGetList } from 'react-admin';
-import {
-  Card,
-  TextField as MuiTextField,
-  Button,
-  Toolbar,
-} from '@mui/material'
 
-const Body = (props) => { 
-  console.log(`list: `, props)
+import {style} from '@views/admin/theme/react-admin'
+
+const Body = (props) => {
   return (
-    <List resource="posts" component="div" className="w-full p-0 m-0">
-        <Datagrid>
-            <TextField source="id" />
-            <TextField source="title" />
-            <DateField source="published_at" />
-            <TextField source="category" />
-            <BooleanField source="commentable" />
-        </Datagrid>
-    </List>
+    <div className="w-full bg-white">
+      <List resource="posts" component="div" className="w-full p-0 m-0">
+          <Datagrid sx={style.Grid}>
+              <TextField source="id" />
+              <TextField source="title" />
+              <DateField source="published_at" />
+              <TextField source="category" />
+              <BooleanField source="commentable" />
+          </Datagrid>
+      </List>
+    </div>
 )}
 
 export default Body
