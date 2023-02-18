@@ -38,7 +38,7 @@ const Widgets = () => {
   const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
   return (
-    <CCard className="mb-4">
+    <CCard className="mb-4 w-full">
       <CCardHeader>Widgets</CCardHeader>
       <CCardBody>
         <DocsExample href="/components/widgets/#cwidgetstatsa">
