@@ -27,7 +27,7 @@ const AppHeader = () => {
 
   return (
     <CHeader position="sticky" className="mb-4">
-      <CContainer fluid>
+      <CContainer fluid className="w-full flex flex-row">
         <CHeaderToggler
           className="ps-1"
           onClick={() => dispatch(setSidebarShow(!sidebarShow))}

@@ -13,10 +13,20 @@ import {
   cilSpeedometer,
   cilUser,
   cilStar,
+  cilSettings,
 } from '@coreui/icons'
-import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
+import { CNavGroup, CNavItem, CNavTitle, CHeaderDivider } from '@coreui/react'
 
 const _menu = [
+
+  {
+    component: CNavTitle,
+    name: 'MEMBERSHIP',
+    badge: {
+      color: 'nav-title',
+      text: '―――――――――',
+    },
+  },
   // {
   //   component: CNavItem,
   //   name: '대시보드',
@@ -27,16 +37,6 @@ const _menu = [
   //     text: <CIcon icon={cilSpeedometer}/>,
   //   },
   // },
-  {
-    component: CNavTitle,
-    name: 'MEMBERSHIP',
-
-    to: '/members',
-    badge: {
-      color: 'success',
-      text: <CIcon icon={cilUser}/>,
-    },
-  },
   {
     component: CNavGroup,
     name: '회원',
@@ -86,8 +86,8 @@ const _menu = [
     component: CNavTitle,
     name: 'RESOURCE',
     badge: {
-      color: 'success',
-      text: <CIcon icon={cilNotes}/>,
+      color: 'nav-title',
+      text: '―――――――――',
     },
   },
   {
@@ -147,16 +147,16 @@ const _menu = [
   {
     component: CNavTitle,
     name: 'SETTINGS',
+    badge: {
+      color: 'nav-title',
+      text: '―――――――――',
+    },
   },
   {
     component: CNavItem,
     name: 'Widgets',
     to: '/widgets',
     icon: <CIcon icon={cilCalculator} customClassName="nav-icon" />,
-    badge: {
-      color: 'info',
-      text: 'NEW',
-    },
   },
   {
     component: CNavGroup,
@@ -185,6 +185,10 @@ const _menu = [
       },
     ],
   },
+
+// ---------------------------------------------------------
+
+
 ]
 
 export default _menu

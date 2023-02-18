@@ -26,7 +26,7 @@ import ReactImg from '@assets/images/react.jpg'
 const Body = () => {
   return (
     <CRow className="w-full p-0">
-      <CCol xs={12} lassName="w-full p-0">
+      <CCol xs={12} className="w-full p-0">
         <CCard className="mb-[30px]">
           <CCardHeader>
             <strong>Card</strong> <small>Example</small>
@@ -56,24 +56,6 @@ const Body = () => {
                   </CCardText>
                   <CButton href="#">Go somewhere</CButton>
                 </CCardBody>
-              </CCard>
-            </DocsExample>
-          </CCardBody>
-        </CCard>
-      </CCol>
-      <CCol xs={12}>
-        <CCard className="mb-[30px]">
-          <CCardHeader>
-            <strong>Card</strong> <small>Body</small>
-          </CCardHeader>
-          <CCardBody>
-            <p className="text-medium-emphasis small">
-              The main block of a card is the <code>&lt;CCardBody&gt;</code>. Use it whenever you
-              need a padded section within a card.
-            </p>
-            <DocsExample href="components/card/#body">
-              <CCard>
-                <CCardBody>This is some text within a card body.</CCardBody>
               </CCard>
             </DocsExample>
           </CCardBody>

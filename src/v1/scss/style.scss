@@ -2,7 +2,7 @@
 @import "variables";
 
 $enable-ltr: true;
-$enable-rtl: true;
+$enable-rtl: false;
 
 // Import CoreUI for React components library
 @import "@coreui/coreui/scss/coreui";
